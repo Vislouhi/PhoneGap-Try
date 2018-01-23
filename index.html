@@ -51,7 +51,8 @@
 	var squareSize;
 	var or;
 	windowY=screen.height;
-	windowX=0.7*screen.width;
+	windowX=0.5*screen.width;
+	 
 	
 	squareSize=(windowX)/2;
 	document.body.style.width = windowX+"px";
@@ -59,7 +60,7 @@
 	//alert("the orientation of the device is now " + screen.orientation.angle);
 	or=0;
 	window.addEventListener("orientationchange", function() {
-    location.reload(true);
+    
 });
 	
  </script>
@@ -67,8 +68,8 @@
  
  <script type="text/javascript">
 	
-	if (screen.orientation.angle==or){document.write("width:"+squareSize+"px;height:"+squareSize+"px;"); }
-	else{document.write("width:"+squareSize/2+"px;height:"+squareSize/2+"px;"); }
+  document.write("width:"+squareSize+"px;height:"+squareSize+"px;"); 
+
 	
 	</script>
 
@@ -84,8 +85,8 @@
  
   <script type="text/javascript">
 	
-	if (screen.orientation.angle==or){document.write('<table style="height: '+squareSize+'px; width:'+squareSize+'px;" border="1" align="center">'); }
-	else{document.write('<table style="height:'+squareSize/2+'px; width:'+(windowX)+'px;" border="1" align="center">'); }
+document.write('<table style="height: '+squareSize+'px; width:'+squareSize+'px;" border="1" align="center">'); 
+
 	
 	</script>
 
@@ -97,7 +98,7 @@
 	<td align="center" class="testBut" >&nbsp;but1</td>
 	<script type="text/javascript">
 	
-	if (screen.orientation.angle==or){document.write("</tr><tr>"); }
+document.write("</tr><tr>"); 
 	
 	</script>
 	<td align="center" class="testBut" >&nbsp;but1</td>

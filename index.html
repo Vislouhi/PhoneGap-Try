@@ -40,11 +40,28 @@
  
  </head>
  
-  <body onload="loadPage()">
+  <body  >
+ <script type="text/javascript">
+ var windowX;
+	var windowY;
+	var squareSize;
+	windowY=screen.height;
+	windowX=screen.width;
+	squareSize=(windowX-windowX/5)/2;
+	document.body.style.width = windowX+"px";
+	document.body.style.height = windowX*0.8+"px";
+	alert("the orientation of the device is now " + screen.orientation.angle);
+ </script>
+ <style> .testBut { font-size:50pt;  padding-top:0px;width:"50%;height:"50%;padding-left:0px;background-image:url("images/backgr.png");  background-size:cover;background-repeat:no-repeat;background-position: center center;   }  </style>
+
+ 
+ <table border="1" align="center" style="height: 70%; width:70%"><tbody>
+	<tr><td align="center" class="testBut">&nbsp; but1</td>
+	<td align="center" class="testBut" >&nbsp;but1</td></tr><tr>
+	<td align="center" class="testBut" >&nbsp;but1</td>
+	<td align="center" class="testBut">&nbsp;but1</td></tr></tbody></table>
+ 
  
  </body>
  </div>
 </html>
-
-
-

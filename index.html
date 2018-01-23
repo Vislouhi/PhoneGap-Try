@@ -52,7 +52,7 @@
 	var or;
 	windowY=screen.height;
 	windowX=screen.width;
-	 if (windowY>windowX){windowX=1*windowX;}else {windowX=1*windowY;}
+	 if (windowY>windowX){windowX=0.8*windowX;}else {windowX=0.8*windowY;}
 	
 	squareSize=(windowX)/2;
 	document.body.style.width = windowX+"px";
@@ -85,7 +85,7 @@
  
   <script type="text/javascript">
 	
-document.write('<table style="height: '+squareSize+'px; width:'+squareSize+'px;" border="1" align="center">'); 
+document.write('<table style="height: '+2*squareSize+'px; width:'+2*squareSize+'px;" border="1" align="center">'); 
 
 	
 	</script>

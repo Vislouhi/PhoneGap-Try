@@ -36,7 +36,11 @@
    
   
   </script>
- 
+ <style type="text/css">
+   TABLE {
+    table-layout: fixed; /* Ячейки фиксированной ширины */
+   }
+  </style>
  
  </head>
  
@@ -47,25 +51,53 @@
 	var squareSize;
 	var or;
 	windowY=screen.height;
-	windowX=screen.width;
-	squareSize=(windowX-windowX/5)/2;
-	document.body.style.width = windowX*0.6+"px";
-	document.body.style.height = windowX*0.5+"px";
-	//alert("the orientation of the device is now " + screen.orientation.angle);
+	windowX=0.7*screen.width;
 	
+	squareSize=(windowX)/2;
+	document.body.style.width = windowX+"px";
+	document.body.style.height = windowX*0.8+"px";
+	//alert("the orientation of the device is now " + screen.orientation.angle);
+	or=0;
 	window.addEventListener("orientationchange", function() {
     location.reload(true);
 });
 	
  </script>
- <style> .testBut { font-size:50pt;  padding-top:0px;width:"50%;height:"50%;padding-left:0px;background-image:url("images/backgr.png");  background-size:cover;background-repeat:no-repeat;background-position: center center;   }  </style>
+ <style> .testBut { font-size:25pt;  padding-top:10px;
+ 
+ <script type="text/javascript">
+	
+	if (screen.orientation.angle==or){document.write("width:"+squareSize+"px;height:"+squareSize+"px;"); }
+	else{document.write("width:"+squareSize/2+"px;height:"+squareSize/2+"px;"); }
+	
+	</script>
 
  
- <table border="1" align="center" style="height: 70%; width:70%"><tbody>
-	<tr><td align="center" class="testBut">&nbsp; but1</td>
-	<td align="center" class="testBut" >&nbsp;but1</td><script type="text/javascript">
+ 
+ padding-left:10px;background-image:url("images/backgr.png");  background-size:cover;background-repeat:no-repeat;background-position: center center;   }  
+
+  
+  
+  </style>
+ 
+ 
+ 
+  <script type="text/javascript">
 	
-	if (screen.orientation.angle==0){document.write("</tr><tr>"); }
+	if (screen.orientation.angle==or){document.write('<table style="height: '+squareSize+'px; width:'+squareSize+'px;" border="1" align="center">'); }
+	else{document.write('<table style="height:'+squareSize/2+'px; width:'+(windowX)+'px;" border="1" align="center">'); }
+	
+	</script>
+
+ 
+ 
+ 
+ <tbody>
+	<tr><td align="center" class="testBut">&nbsp; but1</td>
+	<td align="center" class="testBut" >&nbsp;but1</td>
+	<script type="text/javascript">
+	
+	if (screen.orientation.angle==or){document.write("</tr><tr>"); }
 	
 	</script>
 	<td align="center" class="testBut" >&nbsp;but1</td>

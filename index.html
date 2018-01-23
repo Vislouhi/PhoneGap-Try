@@ -45,19 +45,29 @@
  var windowX;
 	var windowY;
 	var squareSize;
+	var or;
 	windowY=screen.height;
 	windowX=screen.width;
 	squareSize=(windowX-windowX/5)/2;
-	document.body.style.width = windowX+"px";
-	document.body.style.height = windowX*0.8+"px";
-	alert("the orientation of the device is now " + screen.orientation.angle);
+	document.body.style.width = windowX*0.6+"px";
+	document.body.style.height = windowX*0.5+"px";
+	//alert("the orientation of the device is now " + screen.orientation.angle);
+	
+	window.addEventListener("orientationchange", function() {
+    location.reload(true);
+});
+	
  </script>
  <style> .testBut { font-size:50pt;  padding-top:0px;width:"50%;height:"50%;padding-left:0px;background-image:url("images/backgr.png");  background-size:cover;background-repeat:no-repeat;background-position: center center;   }  </style>
 
  
  <table border="1" align="center" style="height: 70%; width:70%"><tbody>
 	<tr><td align="center" class="testBut">&nbsp; but1</td>
-	<td align="center" class="testBut" >&nbsp;but1</td></tr><tr>
+	<td align="center" class="testBut" >&nbsp;but1</td><script type="text/javascript">
+	
+	if (screen.orientation.angle==0){document.write("</tr><tr>"); }
+	
+	</script>
 	<td align="center" class="testBut" >&nbsp;but1</td>
 	<td align="center" class="testBut">&nbsp;but1</td></tr></tbody></table>
  

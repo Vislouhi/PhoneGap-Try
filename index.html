@@ -29,6 +29,25 @@
 	document.write("qq");
 	//alert("Image is loaded");
    }
+  
+   function deviceOrientationListener(event) {
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+
+        
+document.write("Alpha: " + Math.Round(event.alpha));
+        
+document.write("Alpha: " + Math.Round(event.beta));
+    
+		document.write("Alpha: " + Math.Round(event.gamma));
+      }
+
+      if (window.DeviceOrientationEvent) {
+        window.addEventListener("deviceorientation", deviceOrientationListener);
+      } else {
+        alert("Sorry, your browser doesn't support Device Orientation");
+      }
+  
   </script>
  
  

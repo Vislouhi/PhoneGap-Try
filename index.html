@@ -1,35 +1,42 @@
+<!DOCTYPE HTML>
 <html>
-<head>
-	<title>Главная страница - страница обо мне</title>
-</head>
-<body>
-<center><h1>Информация обо мне</h1></center>
-<img src="images/uiui.png">	
-Краткая биография обо мне
-Родился в 1985 году в городе Москва. Закончил в 2008 году МАИ.
-На данный момент работаю ведущим инженером в крупной авиакомпании.
-Моя мечта стать ведущим по машине.
-
-Поскольку я люблю авиацию, то хотел бы поделиться несколькими интересными 
-фотографиями на эту тему
-<br/><br/>
-<center><img alt="Два самолета" 
-src="https://img-fotki.yandex.ru/get/9931/160700675.0/0_110e34_54188f48_-1-orig">
-</center>
-<br/><br/>
-<font style="color:green">Этот текст зеленый</font>
-<br/><br/>
-<b>Просто пример жирного текста</b>
-<br/><br/>
-Низ страницы
-<br/><br/>
-В данном примере мы рассмотрели кратко основные теги HTML, теперь можно пробовать создавать 
-несколько связанных страниц через ссылки и выкладывать сайт в интернет.
-<hr>
-Этот материал был написан благодаря сайту 
-<a href=http://zarabotat-na-sajte.ru/>
-http://zarabotat-na-sajte.ru/</a> - за что я ему благодарен. 
-<br/><br/>
-Спасибо. До новых встреч!
-</body>
+ <head>
+  <meta charset="utf-8">
+  <title>Событие onload</title>
+  
+ 
+  <script type="text/javascript">
+   function loadPage() {
+    var windowX;
+	var windowY;
+	var squareSize;
+	windowX=screen.width;
+	windowY=screen.height;
+	squareSize=(windowX-windowX/5)/2;
+	
+	
+	document.write('<style> .testBut { font-size:150pt;  padding-top:0px;width:"50%;height:"50%;padding-left:0px;background-image:url("backgr.png");  background-size:cover;background-repeat:no-repeat;background-position: center center;   }  </style>');
+	//document.writeln(windowY);
+	
+	document.write('<style> DIV {width: '+windowX+'px;height:'+windowX*0.8+'px;margin: 7px;padding: 10px;}</style>'); 
+	
+	document.write('<div><table border="1" align="center" style="height: 90%; width:90%"><tbody>	');
+	document.write('<tr><td align="center" class="testBut">&nbsp; but1</td>');
+	document.write('<td align="center" class="testBut" >&nbsp;but1</td></tr><tr>');
+	document.write('<td align="center" class="testBut" >&nbsp;but1</td>');
+	document.write('<td align="center" class="testBut">&nbsp;but1</td></tr></tbody></table></div>');
+	document.write("qq");
+	//alert("Image is loaded");
+   }
+  </script>
+ 
+ 
+ </head>
+  <body onload="loadPage()">
+ 
+ </body>
+ </div>
 </html>
+
+
+

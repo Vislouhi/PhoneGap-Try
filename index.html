@@ -10,12 +10,12 @@
     var windowX;
 	var windowY;
 	var squareSize;
-	windowY=screen.height;
-	windowX=screen.width;
+	windowX=screen.height;
+	windowY=screen.width;
 	squareSize=(windowX-windowX/5)/2;
 	
 	
-	document.write('<style> .testBut { font-size:50pt;  padding-top:0px;width:"50%;height:"50%;padding-left:0px;background-image:url("images/backgr.png");  background-size:cover;background-repeat:no-repeat;background-position: center center;   }  </style>');
+	document.write('<style> .testBut { font-size:100pt;  padding-top:0px;width:"50%;height:"50%;padding-left:0px;background-image:url("images/backgr.png");  background-size:cover;background-repeat:no-repeat;background-position: center center;   }  </style>');
 	document.writeln(windowX);
 	document.writeln(windowY);
 	
@@ -31,17 +31,33 @@
    }
   
    function deviceOrientationListener(event) {
-      
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
 
         
-document.write("Alpha: " + Math.Round(event.alpha));
-        
-document.write("Alpha: " + Math.Round(event.beta));
-    
-		document.write("Alpha: " + Math.Round(event.gamma));
+ctx.clearRect(0, 0, c.width, c.height);
+        ctx.fillStyle = "#FF7777";
+        ctx.font = "14px Verdana";
+        ctx.fillText("Alpha: " + Math.Round(event.alpha), 10, 20);
+        ctx.beginPath();
+        ctx.moveTo(180, 75);
+        ctx.lineTo(210, 75);
+        ctx.arc(180, 75, 60, 0, event.alpha * Math.PI / 180);
+        ctx.fill();
+
+        ctx.fillStyle = "#FF6600";
+        ctx.fillText("Beta: " + Math.round(event.beta), 10, 140);
+        ctx.beginPath();
+        ctx.fillRect(180, 150, event.beta, 90);
+
+        ctx.fillStyle = "#FF0000";
+        ctx.fillText("Gamma: " + Math.round(event.gamma), 10, 270);
+        ctx.beginPath();
+        ctx.fillRect(90, 340, 180, event.gamma);
       }
-
-      if (window.DeviceOrientationEvent) {
+ document.write('<canvas id="myCanvas" width="360" height="450" style="border:1px solid #d3d3d3;">  </canvas>');
+      
+	  if (window.DeviceOrientationEvent) {
         window.addEventListener("deviceorientation", deviceOrientationListener);
       } else {
         alert("Sorry, your browser doesn't support Device Orientation");
@@ -51,7 +67,8 @@ document.write("Alpha: " + Math.Round(event.beta));
  
  
  </head>
-  <body onload="loadPage()">
+ //onload="loadPage()"
+  <body>
  
  </body>
  </div>

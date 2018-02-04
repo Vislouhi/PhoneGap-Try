@@ -61,8 +61,8 @@
 		
 		var randomAnswers = [3];
 
-		var valA=getRandomInt(5, 30);
-		var valB=getRandomInt(1, valA);
+		var valA=getRandomInt(11, 99);
+		
 		
 		
 		var trueAns;
@@ -70,31 +70,27 @@ var trueAnsPos;
 trueAnsPos=getRandomInt(0, 3);
 		
 		//randomQuest = getRandomInt(1, 10);
-		trueAns=valA-valB;
+		trueAns=Math.floor(valA/10)+" см и " +(valA-Math.floor(valA/10)*10)+" мм";
 		
 		
-		randomAnswers = get4randoms(1,30,trueAnsPos,trueAns);
-		var randomQuest;
+		randomAnswers = get4randoms(11,99,trueAnsPos,valA);
+		
 		
 		
 						
 	</script>
 	<div data-role="content" data-theme="b">
 	
-	<h1 id="zag" align="center"> Задание 1 </h1>
-	<p align="center"> На сколько
+	<h1 id="zag" align="center"> Задание 3 </h1>
+	<p align="center"> Перевести 
 <script type="text/javascript">
 						
 						document.write( ""+ valA);
 						
 					</script>
-					больше
+					миллиметров в сантиметры.
 					
-					<script type="text/javascript">
-						
-						document.write( ""+ valB);
-						
-					</script>
+					
 	</p>
 	
 
@@ -118,7 +114,7 @@ trueAnsPos=getRandomInt(0, 3);
 					
 					<script type="text/javascript">
 						
-						document.write( ""+ randomAnswers[0]);
+						document.write( ""+ Math.floor(randomAnswers[0]/10)+" см и " +(randomAnswers[0]-Math.floor(randomAnswers[0]/10)*10)+" мм");
 						
 					</script>
 					
@@ -130,7 +126,7 @@ trueAnsPos=getRandomInt(0, 3);
 		         	<label id="ans1" for="radio-ans-2">
 					<script type="text/javascript">
 						
-						document.write( ""+ randomAnswers[1]);
+						document.write( ""+  Math.floor(randomAnswers[1]/10)+" см и " +(randomAnswers[1]-Math.floor(randomAnswers[1]/10)*10)+" мм");
 						
 					</script>
 					</label>
@@ -139,7 +135,7 @@ trueAnsPos=getRandomInt(0, 3);
 		         	<label id="ans2" for="radio-ans-3">
 					<script type="text/javascript">
 						
-						document.write( ""+ randomAnswers[2]);
+						document.write( ""+  Math.floor(randomAnswers[2]/10)+" см и " +(randomAnswers[2]-Math.floor(randomAnswers[2]/10)*10)+" мм");
 						
 					</script>
 					
@@ -150,7 +146,7 @@ trueAnsPos=getRandomInt(0, 3);
 		         	<label id="ans3" for="radio-ans-4">
 					<script type="text/javascript">
 						
-						document.write( ""+ randomAnswers[3]);
+						document.write( ""+  Math.floor(randomAnswers[3]/10)+" см и " +(randomAnswers[3]-Math.floor(randomAnswers[3]/10)*10)+" мм");
 						
 					</script>
 					</label>
@@ -182,24 +178,34 @@ trueAnsPos=getRandomInt(0, 3);
   $( "#chk" ).click(function() {
   var ras;
    ras=""+trueAnsPos;
-  
+   
   
  // $( "#zag" ).text( ""+ Number($( "input:checked" ).val().charAt(7))+"sdf"+ras.charCodeAt(0)+"sdfsd"+trueAnsPos);
-   if (!cheked){
+  
+    if (!cheked){
+   if ($( "input:checked" ).val().charCodeAt(7)==ras.charCodeAt(0)){
    
-   if ($( "input:checked" ).val().charCodeAt(7)==ras.charCodeAt(0)){$( "#ans"+trueAnsPos ).text( ""+ randomAnswers[trueAnsPos]+" - Верно");ok++;}
+   
+   $( "#ans"+trueAnsPos ).text( ""+  Math.floor(randomAnswers[trueAnsPos]/10)+" см и " +(randomAnswers[trueAnsPos]-Math.floor(randomAnswers[trueAnsPos]/10)*10)+" мм"+" - Верно");
+   ok++;}
+   
+   
    else
-   {$( "#ans"+trueAnsPos ).text( ""+ randomAnswers[trueAnsPos]+" - Верно");
-	$( "#ans"+Number($( "input:checked" ).val().charAt(7)) ).text( ""+ randomAnswers[Number($( "input:checked" ).val().charAt(7))]+" - Не верно");
+   {$( "#ans"+trueAnsPos ).text( ""+ Math.floor(randomAnswers[trueAnsPos]/10)+" см и " +(randomAnswers[trueAnsPos]-Math.floor(randomAnswers[trueAnsPos]/10)*10)+" мм"+" - Верно");
+   
+	var tmp=Number($( "input:checked" ).val().charAt(7));
+	
+	$( "#ans"+Number($( "input:checked" ).val().charAt(7)) ).text( ""+Math.floor(randomAnswers[tmp]/10)+" см и " +(randomAnswers[tmp]-Math.floor(randomAnswers[tmp]/10)*10)+" мм" +" - Не верно");
+	
    }
    }
- cheked=true;
+cheked=true;
 });
 
 $( "#next" ).click(function() {
 iter+=1;
 if (cheked==true){
-document.location.href = "m2.html?"+iter+"&"+ok;
+document.location.href = "m3.html?"+iter+"&"+ok;
 }
 });						
 						

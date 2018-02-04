@@ -96,6 +96,7 @@
 		
 		var iter;
 		var ok;
+		var cheked=false;
 		
 		var randomAnswers = [3];
 
@@ -220,6 +221,7 @@ trueAnsPos=getRandomInt(0, 3);
   $( "#chk" ).click(function() {
   var ras;
    ras=""+trueAnsPos;
+   cheked=true;
   
  // $( "#zag" ).text( ""+ Number($( "input:checked" ).val().charAt(7))+"sdf"+ras.charCodeAt(0)+"sdfsd"+trueAnsPos);
   
@@ -234,8 +236,9 @@ trueAnsPos=getRandomInt(0, 3);
 
 $( "#next" ).click(function() {
 iter+=1;
-
+if (cheked==true){
 document.location.href = "m2.html?"+iter+"&"+ok;
+}
 });						
 						
 					</script>
